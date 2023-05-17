@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>About Generative AI</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<style>
+body {
+  background-color: #f0abff;
+  font-family: Arial, sans-serif;
+  color: #333333;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #0000FF;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #006400;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+div {
+  background-color: #FFFFFF;
+  color: #000000;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  margin: 20px auto;
+}
+
+.btn-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.btn-container button {
+  margin: 0 10px;
+}
+
+.answer {
+  display: none;
+}
+
+.answer p {
+  margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>About Generative AI</h1>
+  <ul>
+    <li><button onclick="showAnswer('What is Generative AI?')" id="what-is-generative-ai"><strong>What is Generative AI?</strong></button></li>
+    <li><button onclick="showAnswer('Frameworks for Generative AI')" id="frameworks-for-generative-ai"><strong>Frameworks for Generative AI</strong></button></li>
+  </ul>
+  <div id="answer" class="answer"></div>
+  <img src="2.jpg" alt="Generative AI Image" />
+  <div class="btn-container">
+    <button id="about" onclick="showAnswer('About')" style="background-color: #006400; visibility:hidden;">About</button>
+    <button id="contact" onclick="showAnswer('Contact')" style="background-color: lightgray; visibility:hidden;">Contact</button>
+  </div>
+</div>
+<script>
+function showAnswer(question) {
+  var answer = document.getElementById("answer");
+  answer.innerHTML = getAnswer(question);
+  answer.style.display = "block";
+}
+
+function getAnswer(question) {
+  switch (question) {
+    case "What is Generative AI?":
+      return `
+      <p>Generative AI refers to a branch of artificial intelligence (AI) that focuses on creating models and systems capable of generating new and original content. It involves using machine learning algorithms to learn patterns and structures from existing data, and then using that knowledge to generate new data that resembles the training examples.</p>
+      <p>Generative AI techniques are often based on deep learning models, such as generative adversarial networks (GANs) and variational autoencoders (VAEs). These models are trained on large datasets to capture the underlying distribution and statistical properties of the data. Once trained, they can generate new samples that resemble the training data, but are not identical to it.</p>
+      <p>One of the key characteristics of generative AI is its ability to produce outputs that are novel and diverse. For example, a generative AI system trained on a dataset of images can generate new images that resemble the training set but contain unique variations and details. Similarly, a text-based generative AI model can produce original sentences, stories, or even entire articles.</p>
+      <p>Generative AI has been applied to various domains, including image synthesis, text generation, music composition, and even video game design. It has found applications in fields such as art, design, entertainment, and research.</p>`;
+    case "Frameworks for Generative AI":
+      return `
+      <p>There are several popular frameworks and libraries that are commonly used for developing generative AI models. Here are some of the notable ones:</p>
+      <ul>
+        <li><strong>TensorFlow:</strong> TensorFlow is a widely-used open-source deep learning framework developed by Google. It provides a comprehensive ecosystem for building and deploying machine learning models, including generative AI models. TensorFlow offers various high-level APIs, such as Keras
+
+     <p>There are several popular frameworks and libraries that are commonly used for developing generative AI models. Here are some of the notable ones:</p>
+     <ul>
+        <li><strong>TensorFlow:</strong> TensorFlow is a widely-used open-source deep learning framework developed by Google. It provides a comprehensive ecosystem for building and deploying machine learning models, including generative AI models. TensorFlow offers various high-level APIs, such as Keras, which simplifies the process of building and training generative models.</li>
+        <li><strong>PyTorch:</strong> PyTorch is another popular deep learning framework that is widely adopted in the research community. Developed by Facebook's AI Research lab, PyTorch provides a dynamic and intuitive interface for building deep learning models. It has gained popularity for its flexibility and ease of use, making it a preferred choice for many researchers working on generative AI.</li>
+        <li<strong>Keras:</strong> Keras is a high-level neural networks library that runs on top of TensorFlow and is also integrated into TensorFlow 2.0. It offers a user-friendly and intuitive API for building various types of deep learning models, including generative models. Keras provides a simplified interface, making it easier to prototype and experiment with different generative AI architectures.</li>
+        <li><strong>Theano:</strong> Theano is a numerical computation library that can be used for efficient mathematical operations, including deep learning. It provides a low-level interface for building and training neural networks and has been used in the development of generative AI models. However, note that Theano is no longer actively maintained, and many developers have transitioned to other frameworks.</li>
+        <li><strong>MXNet:</strong> MXNet is an open-source deep learning framework developed by Apache. It offers a flexible and efficient platform for building and deploying machine learning models, including generative AI models. MXNet supports multiple programming languages and provides both high-level and low-level APIs to suit different development needs.</li>
+        </u>
+        <p>There are also specific frameworks and libraries that focus on generative adversarial networks (GANs), a popular approach within generative AI. Some notable GAN frameworks include:</p>
+        <ul>
+            <li><strong>PyTorch-GAN:</strong> A PyTorch-based library specifically designed for building and training GANs. It provides a collection of pre-built GAN models and utilities to facilitate GAN development.</li>
+            <li><strong>TensorFlow-GAN:</strong> TensorFlow-GAN is an extension library for TensorFlow that offers a set of tools and pre-built components to simplify GAN development and training.</li>
+            <li><strong>Keras-GAN:</strong> Keras-GAN is a collection of Keras-based implementations of various GAN architectures. It provides a user-friendly interface for building and training GAN models.</li>
+        </ul>
+`;
+}
+}
+</script>
+
+</body>
+</html>
